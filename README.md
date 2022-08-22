@@ -16,10 +16,10 @@ EventLoop:对于不停检测是否有可用的事件的封装，同时管理Epol
 Server：对于开启一个socket，监听连接，以及释放连接的流程封装。同时管理ThreadPool对象、Connection对象、Acceptor对象  
 
 ## 架构
-1.OOP思想：基于事件，事件流程的封装  
+1.封装思想：基于事件，事件流程的封装  
+1.OBP思想：使用std::bind机制，不使用继承等适配器方法，解耦  
 2.主从多线程Reactor模式：事件驱动模型，主Reactor主要负责接收连接并将连接分发至不同的从Reactor  
 3.one loop one thread思想：主线程处理主Reactor(EpollLoop)事件处理，子线程每一个负责一个从Reactor的事件处理  
-4.注册回调机制：使用std::bind机制，不使用继承等适配器方法，解耦  
 
 ## 使用
 cd build  
