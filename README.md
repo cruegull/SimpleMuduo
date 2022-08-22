@@ -1,7 +1,7 @@
 # 基于LinuxIO多路复用Epoll的简单Muduo网络库C++实现
 
 ## 描述
-1.基础类：
+1.基础类：\
 Channel:对于单个fd的封装，将fd事件拆分为本身事件类型用于检测事件，epoll触发事件类型用于处理事件
 InetAddress:对于socket等所需的struct sockaddr的封装
 ThreadPool:线程池的封装
