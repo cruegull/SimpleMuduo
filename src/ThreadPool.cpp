@@ -31,8 +31,8 @@ ThreadPool::ThreadPool(int poolsize)
                     while (m_tasks.empty())
                     {
                         m_cond.wait(lock);
+                        if (!m_run) return;
                     }
-                    if (!m_run) return;
                     task = m_tasks.front();
                     m_tasks.pop();
                 }
